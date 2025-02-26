@@ -1,6 +1,6 @@
-# FlashMLA
+# MT-FlashMLA
 
-FlashMLA is an efficient MLA decoding kernel for Hopper GPUs, optimized for variable-length sequences serving.
+MT-FlashMLA is an efficient MLA decoding kernel for MooreThreads GPU (Compute Capability 3.1), optimized for variable-length sequences serving.
 
 Currently released:
 - BF16, FP16
@@ -11,16 +11,8 @@ Currently released:
 ### Install
 
 ```bash
-python setup.py install
+python setup_musa.py install
 ```
-
-### Benchmark
-
-```bash
-python tests/test_flash_mla.py
-```
-
-Achieving up to 3000 GB/s in memory-bound configuration and 580 TFLOPS in computation-bound configuration on H800 SXM5, using CUDA 12.6.
 
 ### Usage
 
@@ -40,9 +32,9 @@ for i in range(num_layers):
 
 ## Requirements
 
-- Hopper GPUs
-- CUDA 12.3 and above
-- PyTorch 2.0 and above
+- MooreThreads GPU (Compute Capability 3.1)
+- MUSA 4.0.0 and above
+- torch_musa 2.5.0 and above
 
 ## Acknowledgement
 
